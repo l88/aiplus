@@ -1,0 +1,34 @@
+<!--relations.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <view wx:if="{{relation.id}}" class="weui-cells__title">修改{{homePref.relationName}}</view>
+    <view wx:if="{{!relation.id}}" class="weui-cells__title">添加{{homePref.relationName}}</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">{{homePref.relationName}}名</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" value="{{relation.name}}" placeholder="请输入{{homePref.relationName}}名称" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input weui-cell_vcode">
+        <view class="weui-cell__hd">
+          <view class="weui-label">{{homePref.rightsName}}数</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" value="{{newRights}}" placeholder="请输入{{homePref.rightsName}}数" bindinput="inputRights" />
+        </view>
+        <view class="weui-cell__ft">
+          {{homePref.rightsUnit}}
+        </view>
+      </view>
+      <view class="weui-form-preview__ft">
+        <view bindtap="goBack" class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active">返回</view>
+        <view bindtap="delete" wx:if="{{relation.id}}" class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active">删除</view>
+        <view bindtap="save" wx:if="{{!newRights || newRights==0 || newRights==relation.rights}}" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">保存</view>
+        <view bindtap="apply" wx:if="{{newRights>0 && newRights != relation.rights}}" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">提交审批</view>
+      </view>
+    </view>
+  </view>
+</view>

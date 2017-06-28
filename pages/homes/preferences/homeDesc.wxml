@@ -1,0 +1,18 @@
+<!--homeDesc.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-cells__title">设置{{homeName}}的公告</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__bd">
+          <textarea focus bindinput="inputHomeDesc" value="{{homeDesc}}" class="weui-textarea" placeholder="请输入家的公告" style="height: 6.3em" />
+          <view class="weui-textarea-counter">0/200</view>
+        </view>
+      </view>
+      <view class="weui-form-preview__ft">
+        <view bindtap="goBack" class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active">返回</view>
+        <view bindtap="save" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">保存</view>
+      </view>
+    </view>
+  </view>
+</view>

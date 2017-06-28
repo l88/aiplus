@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/homes/homes",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/home/home",
+    "pages/letter/letter",
+    "pages/me/me",
+    "pages/homes/newhome/newhome",
+    "pages/homes/search/search",
+    "pages/homes/homeface/homeface",
+    "pages/homes/joinhome/joinhome",
+    "pages/homes/letters/letters",
+    "pages/homes/preferences/preferences",
+    "pages/homes/preferences/relations/relations",
+    "pages/homes/preferences/myNickName",
+    "pages/homes/preferences/homeName",
+    "pages/homes/preferences/homeDesc",
+    "pages/homes/preferences/admin/admin",
+    "pages/homes/preferences/admin/members",
+    "pages/homes/preferences/admin/assignOwner",
+    "pages/homes/myHomes"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0068C4",
+    "navigationBarTitleText": "爱家书",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#626567",
+    "selectedColor": "#2A8CE5",
+    "backgroundColor": "#FBFBFB",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/homes/homes",
+        "text": "",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index_focus.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "",
+        "iconPath": "images/burger.png",
+        "selectedIconPath": "images/burger_focus.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

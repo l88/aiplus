@@ -1,0 +1,115 @@
+<!--admin.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-cells__title">{{homePref.name}}通用设置</view>
+    <view class="weui-cells weui-cells_after-title">
+      <navigator url="assignOwner?id={{homePref.id}}" class="weui-cell">
+        <view class="weui-cell__bd weui-cell__ft_in-access">
+          家主管理权转让
+        </view>
+      </navigator>
+
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__hd">可发现</view>
+        <view class="weui-cell__bd weui-cells__tips">决定家是否可被搜索到</view>
+        <view class="weui-cell__ft">
+          <switch checked="{{homePref.isPublic?true:''}}" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__hd">邀请确认</view>
+        <view class="weui-cell__bd weui-cells__tips">决定加入家是否需要审批</view>
+        <view class="weui-cell__ft">
+          <switch name="isAcceptable" checked="{{homePref.isAcceptable?true:''}}" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">身份名称</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input name="relationName" class="weui-input" value="{{homePref.relationName}}" placeholder="请输入身份名称" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">权益名称</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input name="rightsName" class="weui-input" value="{{homePref.rightsName}}" placeholder="请输入权益名称" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">权益单位</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input name="rightsUnit" class="weui-input" value="{{homePref.rightsUnit}}" placeholder="请输入权益单位" />
+        </view>
+      </view>
+    </view>
+    <!-- cells1 -->
+
+    <view class="weui-cells__title">审批设置</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__hd">成员可审批</view>
+        <view class="weui-cell__bd weui-cells__tips">家主和成员都有审批权？</view>
+        <view class="weui-cell__ft">
+          <switch name="canMbApprove" checked="{{homePref.canMbApprove?true:''}}" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          邀请审批{{homePref.rightsName}}>
+        </view>
+        <view class="weui-cell__bd">
+          <input name="minAcceptRights" class="weui-input" value="{{homePref.minAcceptRights}}" placeholder="审批邀请所需的最低{{homePref.rightsName}}数" />
+        </view>
+        <view class="weui-cell__ft">
+          {{homePref.rightsUnit}}
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          {{homePref.rightsName}}审批人数>
+        </view>
+        <view class="weui-cell__bd">
+          <input name="minApplys" class="weui-input" value="{{homePref.minApplys}}" placeholder="审批{{homePref.rightsName}}所需的最低人数" />
+        </view>
+        <view class="weui-cell__ft">
+          人
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          {{homePref.rightsName}}审批{{homePref.rightsName}}>
+        </view>
+        <view class="weui-cell__bd">
+          <input name="minApplyRights" class="weui-input" value="{{homePref.minApplyRights}}" placeholder="审批{{homePref.rightsName}}所需的最低{{homePref.rightsName}}数" />
+        </view>
+        <view class="weui-cell__ft">
+          {{homePref.rightsUnit}}
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          审批提示消息
+        </view>
+        <view class="weui-cell__bd">
+          <textarea name="applyTips" value="{{homePref.applyTips}}" class="weui-textarea" placeholder="提示应该提交的认证材料要求，如身份证等" style="height: 6.3em" />
+          <view class="weui-textarea-counter">0/200</view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells">
+      <view class="weui-form-preview__ft">
+        <view bindtap="goBack" class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active">返回</view>
+        <view bindtap="save" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">保存</view>
+      </view>
+    </view>
+    <!-- cells2 -->
+
+  </view>
+  <!-- bd -->
+</view>

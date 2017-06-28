@@ -1,0 +1,27 @@
+<!--newhome.wxml-->
+<view class="container">
+  <view class="page-head">
+    <view class="page-head-title"></view>
+    <view class="page-head-line"></view>
+    <view class="page-head-desc">提示：在创建的新家里，您将自动成为家主</view>
+  </view>
+  <view class="input-area">
+    <form bindsubmit="formSubmit">
+      <view class="base-input">
+        <view class="page-section">
+          <view class="weui-cells__title"></view>
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+              <input name="newName" class="weui-input" auto-focus placeholder="新家的名称" confirm-typ="next" type="text" length="30" />
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="options-input"></view>
+      <view class="commands">
+        <button type="default" formType="submit">创建新家</button>
+      </view>
+    </form>
+  </view>
+
+</view>

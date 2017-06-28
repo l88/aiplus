@@ -1,0 +1,57 @@
+<!--members.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="过滤" value="{{searchVal}}" focus bindinput="searchTyping" />
+          <view class="weui-icon-clear" wx:if="{{searchVal.length > 0}}" bindtap="clearSearch">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+      </view>
+      <view class="weui-search-bar__cancel-btn" bindtap="kickOut">踢除</view>
+    </view>
+    <!-- search bar -->
+
+    <view class="weui-tab">
+      <view class="weui-navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+        <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+      </view>
+      <view class="weui-tab__panel">
+        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+          <view class="weui-cells__title">成员昵称，{{homePref.relationName}}，{{homePref.rightsName}}</view>
+          <checkbox-group name="memberChecks" bindchange="checkMembers">
+            <scroll-view scroll-y="true" style="height: 820rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+              <view class="weui-cells weui-cells_after-title">
+                <block wx:for="{{vRelations}}" wx:key="id">
+                  <view class="weui-cell">
+                    <view class="weui-cell__hd">
+                      <view class="weui-label">{{item.nickName}}</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                      {{item.name}}
+                    </view>
+                    <view class="weui-cell__ft">
+                      {{item.rights}}{{homePref.rightsUnit}}
+                      <checkbox value="{{item.id}}" checked="{{item.checked}}" />
+                    </view>
+                  </view>
+                </block>
+              </view>
+            </scroll-view>
+          </checkbox-group>
+        </view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+        TODO:按身份列出成员
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

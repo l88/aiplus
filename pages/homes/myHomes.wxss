@@ -1,0 +1,135 @@
+/* homes.wxss */
+
+.container .search {
+  width: 735rpx;
+  height: 45rpx;
+  padding: 12.5rpx 0 12.5rpx 15rpx;
+  background: #2a8ce5;
+}
+
+.container .search-left {
+  flex: 8;
+  background: #4ea3e7;
+  text-align: left;
+}
+
+.container .search-left input {
+/*  display: inline-block;*/
+  height: 45rpx;
+  font-size: 26rpx;
+}
+
+.search-placeholder {
+  color: #8ccefd;
+  line-height: 20rpx;
+}
+
+.container .search .search-left image {
+  display: inline-block;
+  width: 35rpx;
+  height: 35rpx;
+  padding: 1rpx 15rpx 15rpx 20rpx;
+}
+
+.container .search .search-right {
+  flex: 1;
+}
+
+.container .search .search-right image {
+  width: 45rpx;
+  height: 45rpx;
+}
+
+.container {
+  padding: 0;
+  font-size: 14rpx;
+  background: #f0f4f3;
+  color: #000;
+}
+
+.item {
+  width: 750rpx;
+  padding: 0rpx 0rpx 0rpx;
+  margin: 0rpx 0 0rpx 0;
+  background: #fff;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.item .item-left {
+  margin-top: 15rpx;
+  display: table-cell;
+}
+
+.item .item-middle {
+  flex: 1;
+  margin-left: 10rpx;
+  padding-top: 13rpx;
+  overflow: hidden;
+}
+
+.item .item_right {
+  width: 60rpx;
+  padding-top: 13rpx;
+  overflow: hidden;
+}
+
+.item .item-left .image {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 44rpx;
+  background-color: #eee;
+}
+
+.item .title {
+  color: #000;
+  font-family: "微软雅黑";
+  font-weight: bold;
+  line-height: 40rpx;
+  padding: 32rpx, 16rpx, 0, 16rpx;
+  font-size: 32rpx;
+  margin-top: 60rpx;
+  overflow: hidden; /*自动隐藏文字*/
+  white-space: nowrap;
+  text-overflow: ellipsis; /*文字隐藏后添加省略号*/
+}
+
+.message {
+  font-family: "微软雅黑";
+  color: #808080;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  padding: 200rpx, 16rpx, 0, 16rpx;
+  overflow: hidden; /**自动隐藏文字*/
+  text-overflow: ellipsis; /**文字隐藏后添加省略号*/
+  white-space: nowrap; /**强制不换行*/
+}
+
+.time {
+  color: #808080;
+  font-size: 18rpx;
+}
+
+.mark {
+  position: relative;
+  left: 15rpx;
+  right: 35rpx;
+  padding-top: 4rpx;
+  background-color: #f74c31;
+  text-align: center;
+  font-size: 18rpx;
+  width: 35rpx;
+  height: 35rpx;
+  border-radius: 20rpx;
+  color: #fff;
+  display: table-cell;
+}
+
+.line {
+  height: 1px;
+  width: 100%;
+  background-color: #e0e1e2;
+}
+
+.text {
+}

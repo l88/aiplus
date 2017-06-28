@@ -1,0 +1,86 @@
+<!--preferences.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-cells">
+      <navigator url="homeName?id={{homePref.id}}&name={{homePref.name}}" class="weui-cell">
+        <view class="weui-cell__bd">
+          家名称
+        </view>
+        <view class="weui-cell__ft">
+          {{homePref.name}}
+        </view>
+      </navigator>
+      <navigator url="myNickName?id={{myPref.id}}&name=小五" class="weui-cell">
+        <view class="weui-cell__bd">我在家里的昵称</view>
+        <view class="weui-cell__ft">
+          {{myPref.nickName}}
+        </view>
+      </navigator>
+      <navigator url="homeDesc?id={{homePref.id}}&name={{homePref.name}}&desc={{homePref.desc}}" class="weui-cell">
+        <view class="weui-cell__bd">
+          家公告
+        </view>
+        <view class="weui-cell__ft">
+          {{homePref.desc}}
+        </view>
+      </navigator>
+      <navigator url="admin/admin?id={{homePref.id}}&name={{homePref.name}}" class="weui-cell" wx:if="{{myPref.personId==homePref.owner}}">
+        <view class="weui-cell__bd weui-cell__ft_in-access">
+          家管理
+        </view>
+      </navigator>
+
+      <navigator url="admin/members?id={{homePref.id}}&name={{homePref.name}}" class="weui-cell" wx:if="{{myPref.personId==homePref.owner}}">
+        <view class="weui-cell__bd weui-cell__ft_in-access">
+          成员管理
+        </view>
+      </navigator>
+      <!-- navigator url="admin/banned?id={{homePref.id}}&name={{homePref.name}}" class="weui-cell" wx:if="{{myPref.personId==homePref.owner}}">
+        <view class="weui-cell__bd weui-cell__ft_in-access">
+          禁言管理
+        </view>
+      </navigator -->
+    </view>
+    <!-- cells1 -->
+    <view class="weui-cells">
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">消息免打扰</view>
+        <view class="weui-cell__ft">
+          <switch checked="a" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">置顶</view>
+        <view class="weui-cell__ft">
+          <switch checked="" />
+        </view>
+      </view>
+    </view>
+    <!-- cells2 -->
+    <view class="weui-cells">
+      <view class="weui-form-preview__hd">
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">我的{{homePref.relationName}},总{{homePref.rightsName}}数</view>
+          <view class="weui-form-preview__value_in-hd">{{myPref.totalRights}}{{homePref.rightsUnit}}</view>
+        </view>
+      </view>
+      <view class="weui-form-preview__bd">
+        <block wx:for-items="{{myPref.relations}}" wx:for-item="rel" wx:key="{{rel.name}}">
+          <view class="weui-form-preview__item">
+            <navigator url="relations/relations?rId={{rel.id}}" hover-class="weui-form-preview__btn_active">
+              <view class="weui-form-preview__label">{{rel.name}}</view>
+              <view class="weui-form-preview__value weui-cell__ft_in-access">
+                {{rel.rights}}{{homePref.rightsUnit}}
+              </view>
+            </navigator>
+          </view>
+        </block>
+      </view>
+      <view class="weui-form-preview__ft">
+        <navigator url="relations/relations" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">添加{{homePref.relationName}}</navigator>
+      </view>
+    </view>
+
+  </view>
+  <!-- bd -->
+</view>

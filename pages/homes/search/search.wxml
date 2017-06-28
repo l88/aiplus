@@ -1,0 +1,31 @@
+<!--pages/homes/search/search.wxml-->
+<view class="container">
+  <view class="search flex-wrp">
+    <view class="search-left flex-item">
+      <input value="{{searchKey}}" bindinput="bindSearchInput" placeholder="搜索家或人" placeholder-class="search-placeholder" />
+    </view>
+    <view class="search-right flex-item" bindtap="bindSearch">
+      <icon type="search" size="20" color="#fff" />
+    </view>
+  </view>
+  <scroll-view>
+    <block wx:for="{{results.data}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}" wx:key="home_id">
+      <navigator url="../homeface/homeface?id={{item.home_id}}&name={{item.name}}">
+        <view class="item">
+          <view class="item-left">
+            <image src="{{item.avatar}}" class="image" />
+          </view>
+          <view class="item-middle">
+            <view>
+              <text class="title">{{item.name}}</text>
+            </view>
+            <view>
+              <text class="message">{{item.message}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="line"></view>
+      </navigator>
+    </block>
+  </scroll-view>
+</view>

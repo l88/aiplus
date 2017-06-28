@@ -1,0 +1,17 @@
+<!--homeName.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-cells__title">设置家的名称</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__bd">
+          <input bindinput="inputHomeName" focus class="weui-input" value="{{homeName}}" placeholder="请输入家的名称" />
+        </view>
+      </view>
+      <view class="weui-form-preview__ft">
+        <view bindtap="goBack" class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active">返回</view>
+        <view bindtap="save" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">保存</view>
+      </view>
+    </view>
+  </view>
+</view>

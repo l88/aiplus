@@ -1,0 +1,38 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="搜索其他的家" value="{{searchVal}}" focus bindinput="searchTyping" />
+          <view class="weui-icon-clear" wx:if="{{searchVal.length > 0}}" bindtap="clearSearch">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{searchVal}}" class="weui-search-bar__cancel-btn" bindtap="searchHome">搜家</view>
+      <view class="weui-search-bar__cancel-btn" bindtap="newHome">建家</view>
+    </view>
+    <!-- search bar -->
+
+    <scroll-view scroll-y="true" style="height: {{scrollerHeight}}px;" bindscrolltoupper="upper" bindscrolltolower="lower">
+      <view class="weui-cells weui-cells_after-title">
+        <block wx:for="{{myHomes}}" wx:key="id">
+          <view class="weui-cell">
+            <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+              <image src="{{item.avatar}}" class="icon" style="width: 50px; height: 50px; display: block" />
+              <view class="weui-badge" style="position: absolute;top: -.4em;right: -.4em;">{{item.newNum}}</view>
+            </view>
+            <view class="weui-cell__bd">
+              <view class="weui-media-box__title" style="width=20px;">{{item.name}}</view>
+              <view class="weui-media-box__desc" style="white-space: nowrap;">{{item.message}}</view>
+            </view>
+            <view class="weui-cell__ft" style="width:20px;font-size: 12px;">
+              {{item.time}}
+            </view>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+</view>

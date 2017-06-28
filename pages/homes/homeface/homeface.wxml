@@ -1,0 +1,22 @@
+<!--homeface.wxml-->
+
+<view class="container">
+  <view class="page-body">
+
+    <view class="weui-media-box weui-media-box_appmsg">
+      <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+        <image class="weui-media-box__thumb" src="{{homeInfo.avatarUrl}}" />
+      </view>
+      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+        <view class="weui-media-box__title">{{homeInfo.name}}</view>
+        <view class="weui-media-box__desc">{{homeInfo.desc}}</view>
+      </view>
+    </view>
+
+    <view class="btn-area">
+      <button bindtap="bindJoin" type="primary">关注</button>
+      <button type="default">投诉</button>
+    </view>
+  </view>
+
+</view>
