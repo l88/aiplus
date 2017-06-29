@@ -19,7 +19,8 @@
     "pages/homes/preferences/admin/admin",
     "pages/homes/preferences/admin/members",
     "pages/homes/preferences/admin/assignOwner",
-    "pages/homes/myHomes"
+    "pages/homes/myHomes",
+    "pages/write/write"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -35,15 +36,21 @@
     "list": [
       {
         "pagePath": "pages/homes/homes",
-        "text": "",
-        "iconPath": "images/index.png",
-        "selectedIconPath": "images/index_focus.png"
+        "text": "家族",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_focus.png"
+      },
+      {
+        "pagePath": "pages/write/write",
+        "text": "写信",
+        "iconPath": "images/write.png",
+        "selectedIconPath": "images/write_focus.png"
       },
       {
         "pagePath": "pages/me/me",
-        "text": "",
-        "iconPath": "images/burger.png",
-        "selectedIconPath": "images/burger_focus.png"
+        "text": "我",
+        "iconPath": "images/me.png",
+        "selectedIconPath": "images/me_focus.png"
       }
     ]
   },

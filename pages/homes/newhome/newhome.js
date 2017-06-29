@@ -12,21 +12,19 @@ Page({
   formSubmit: function (e) {
     var newName = e.detail.value.newName
     if (newName == '') {
-      wx.showToast({
+      wx.showModal({
         title: '请录入新家的名称',
-        icon: 'loading'
+        content: '家的名称不能为空',
+        showCancel: false
       })
       return
     }
+    wx.navigateBack();
+    /*
     util.createHome({ name: newName }, function () {
       wx.navigateBack()
     }
     )
-  },
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+    */
   }
 })

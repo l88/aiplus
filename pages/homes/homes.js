@@ -1,6 +1,6 @@
 var testData = {
   myHomes: [
-    { id: 1, name: "客服之家", avatar: "../../images/avatar_computer.png", message: "小提示：如何创建我的家。", time: "21:15", newNum: 0 }
+    { id: -1, name: "我的书信", avatar: "../../images/letter.png", message: "小提示：如何创建我的家。", time: "21:15", newNum: 0 }
     , { id: 2, name: "马云之家马云之家马云之家马云之家马云之家马云之家马云之家马云之家马云之家马云之家马云之家马云之家马云之家马云之家马云之家马云之家马云之家马云之家", avatar: "http://img1.3lian.com/gif/more/11/201212/0d1252b54be4f2d240b6b7fe4ed35054.jpg", message: "小马:什么鬼，我有支付宝 什么鬼，我有支付宝什么鬼，我有支付宝什么鬼，我有支付宝什么鬼，我有支付宝什么鬼，我有支付宝什么鬼，我有支付宝什么鬼，我有支付宝什么鬼，我有支付宝什么鬼，我有支付宝什么鬼，我有支付宝什么鬼，我有支付宝什么鬼，我有支付宝什么鬼，我有支付宝什么鬼，我有支付宝", time: "13:15", newNum: 1 }
     , { id: 5, name: "马化腾之家", avatar: "http://img1.3lian.com/gif/more/11/201212/cd1d745ed855bef27f47c8aff0786067.jpg", message: "大大:哈哈哈，我要一统江湖啦", time: "9:15", newNum: 2 }
     , { id: 4, name: "客服之家1", avatar: "../../images/avatar_computer.png", message: "小提示：如何创建我的家。", time: "21:15", newNum: 20 }
@@ -14,7 +14,6 @@ Page({
     scrollerHeight: 0,
     toView:"",
     scrollTop:"",
-    searchVal: "",
     myHomes: []
   },
   onLoad: function (opt) {
@@ -28,38 +27,13 @@ Page({
         that.setData({
           scrollerHeight: res.windowHeight-70
         });
-        console.log('h=' + that.data.scrollerHeight)
       }
     });
   },
-  searchTyping: function (e) {
-    this.setData({
-      searchVal: e.detail.value
-    });
-  },
-  clearSearch: function () {
-    this.setData({
-      searchVal: ""
-    });
-  },
-  searchHome:function(){
-    wx.showToast({
-      title: 'searchHome for:'+this.data.searchVal
-    })
-  },
-  newHome:function(){
-    wx.showToast({
-      title: 'newHome tapped'
-    })
-  },
   upper:function(){
-    wx.showToast({
-      title: 'scroll to upper'
-    })
+
   },
   lower:function(){
-    wx.showToast({
-      title: 'scroll to lower'
-    })
+
   }
 });

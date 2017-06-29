@@ -1,5 +1,4 @@
 /* pages/homes/search/search.wxss */
-@import "../../../common/lib/weui.wxss";
 
 .page-section{
   margin-bottom: 20rpx;

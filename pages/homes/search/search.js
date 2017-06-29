@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    searchVal:'',
     searchKey: '',
     results: { count: 0, data: {} }
   },
@@ -16,13 +17,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    options.s && this.setData({ searchKey: options.s })
-    options.s && this.bindSearch()
+    options.s && this.setData({ searchVal: options.s })
+    options.s && this.searchHome()
   },
-  bindSearchInput: function (e) {
-    searchInput = e.detail.value
+  searchTyping: function (e) {
+    this.setData({
+      searchVal: e.detail.value
+    });
   },
-  bindSearch: function () {
+  clearSearch: function () {
+    this.setData({
+      searchVal: ""
+    });
+  },
+  searchHome: function () {
     var that = this
     util.getMyHomes(function (opt) {
       var homes = opt.data
