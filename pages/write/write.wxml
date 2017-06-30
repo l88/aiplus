@@ -1,2 +1,15 @@
-<!--write.wxml-->
-<text>write.wxml</text>
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">创作书信</view>
+        <view class="page__desc">给家里发信前先要把信写好，然后就可以（转）发给家里了。\n </view>
+    </view>
+    <view class="page__bd page__bd_spacing">
+        <button class="weui-btn" type="primary" bindtap="tapNormal">写普通书信</button>
+
+        <button class="weui-btn" type="default">写动议</button>
+        <button class="weui-btn" type="default" disabled="true">写申请书</button>
+
+        <button class="weui-btn" type="warn" disabled="true">写借条</button>
+        <button class="weui-btn" type="default" open-type="contact">联系客服</button>
+    </view>
+</view>

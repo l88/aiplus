@@ -13,11 +13,22 @@
 
     <scroll-view scroll-y="true" style="height: {{scrollerHeight}}px;" bindscrolltoupper="upper" bindscrolltolower="lower">
       <view class="weui-cells weui-cells_after-title">
+          <navigator url="letters/letters?id=-1&name=我的书信" class="weui-cell">
+            <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+              <image src="../../images/letter.png" class="icon" style="width: 50px; height: 50px; display: block" />
+            </view>
+            <view class="weui-cell__bd">
+              <view class="weui-media-box__title">我的书信</view>
+              <view class="weui-media-box__desc">我的原创作品</view>
+            </view>
+            <view class="weui-cell__ft" style="width:20px;font-size: 12px;">
+            </view>
+          </navigator>
         <block wx:for="{{myHomes}}" wx:key="id">
-          <navigator url="letters/letters?id={{item.id}}&name={{item.name}}" class="weui-cell">
+          <navigator url="letters/letters?id={{item.id}}&name={{item.name}}" class="weui-cell" >
             <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
               <image src="{{item.avatar}}" class="icon" style="width: 50px; height: 50px; display: block" />
-              <view wx:if="{{item.newNum>0}}" class="weui-badge" style="position: absolute;top: -.4em;right: -.4em;">{{item.newNum}}</view>
+              <view wx:if="{{item.newNum>0}}" class="weui-badge" style="position: absolute;top: -.2em;right: -.2em;">{{item.newNum}}</view>
             </view>
             <view class="weui-cell__bd">
               <view class="weui-media-box__title">{{item.name}}</view>

@@ -19,8 +19,8 @@
     "pages/homes/preferences/admin/admin",
     "pages/homes/preferences/admin/members",
     "pages/homes/preferences/admin/assignOwner",
-    "pages/homes/myHomes",
-    "pages/write/write"
+    "pages/write/write",
+    "pages/write/plain"
   ],
   "window": {
     "backgroundTextStyle": "light",

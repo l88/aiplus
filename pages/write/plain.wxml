@@ -1,0 +1,23 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-cells__title">普通书信</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">标题</view>
+        <view class="weui-cell__bd">
+          <input value="{{letter.title}}" class="weui-input" placeholder="书信标题" bindinput="inputTitle" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__bd">
+          <textarea bindinput="inputing" auto-focus auto-height cursor-spacing="5" maxlength="{{maxWords}}" class="weui-textarea" placeholder="请在这里写书信" value="{{letter.content}}" />
+          <view class="weui-textarea-counter">{{wordCount}}/{{maxWords}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-btn-area">
+      <button class="weui-btn" type="default" bindtap="tapSave">保存草稿</button>
+      <button class="weui-btn" type="primary" bindtap="tapSaveSend">保存并发送</button>
+    </view>
+  </view>
+</view>
