@@ -20,7 +20,8 @@
     "pages/homes/preferences/admin/members",
     "pages/homes/preferences/admin/assignOwner",
     "pages/write/write",
-    "pages/write/plain"
+    "pages/write/plain",
+    "pages/send/send"
   ],
   "window": {
     "backgroundTextStyle": "light",

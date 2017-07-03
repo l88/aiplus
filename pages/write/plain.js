@@ -55,12 +55,12 @@ Page({
     });
   },
   tapSaveSend: function () {
+    var that = this;    
     this.saveToHost(this.data.letter, function (l) {
       //TODO send
-      wx.showToast({
-        title: '发送成功'
-      });
-      wx.navigateBack();
+      wx.navigateTo({
+        url: '../send/send?letterid='+that.data.letter.id
+      })
     });
   },
   saveToHost: function (letter, cb) {

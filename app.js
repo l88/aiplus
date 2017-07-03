@@ -18,7 +18,7 @@ App({
           wx.getUserInfo({
             success: function (resi) {
               that.globalData.userInfo = resi.userInfo
-              that.globalData.userInfo.uid=99//TODO
+              that.globalData.userInfo.uid = 99//TODO
               typeof cb == "function" && cb(that.globalData.userInfo)
             }
           })

@@ -8,6 +8,7 @@ var testData = {
     , { id: 11, name: "客服之家4", avatar: "../../images/avatar_computer.png", message: "小提示：如何创建我的家。", time: "21:15", newNum: 0 }
   ]
 }
+var app=getApp();
 Page({
   data: {
     scrollerHeight: 0,
@@ -17,6 +18,7 @@ Page({
   },
   onLoad: function (opt) {
     var that = this;
+    app.getUserInfo();
     testData.myHomes.sort((a, b) => b.newNum - a.newNum == 0 ? a.id - b.id : b.newNum - a.newNum);
     this.setData({ myHomes: testData.myHomes });
 

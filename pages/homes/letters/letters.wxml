@@ -22,5 +22,25 @@
       </view>
     </view>
     <!-- search bar -->
+
+
+    <scroll-view scroll-y="true" style="height: {{scrollerHeight}}px;" bindscrolltoupper="upper" bindscrolltolower="lower">
+      <view class="weui-cells weui-cells_after-title">
+        <block wx:for="{{vDelivers}}" wx:key="id">
+          <navigator url="deliver?id={{item.id}}&name={{item.name}}" class="weui-cell" >
+            <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+              <image src="{{item.avatar}}" class="icon" style="width: 50px; height: 50px; display: block" />
+            </view>
+            <view class="weui-cell__bd">
+              <view class="weui-media-box__title">id={{item.id}},sender={{item.sender}},homeid={{item.homeId}},letterid={{item.letterId}}</view>
+              <view class="weui-media-box__desc">{{item.desc}}</view>
+            </view>
+            <view class="weui-cell__ft" style="width:20px;font-size: 12px;">
+              {{item.time}}
+            </view>
+          </navigator>
+        </block>
+      </view>
+    </scroll-view>
   </view>
 </view>

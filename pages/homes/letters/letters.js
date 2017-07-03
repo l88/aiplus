@@ -1,4 +1,6 @@
 // letters.js
+var app = getApp();
+var srv = require("../../../common/services.js");
 Page({
 
   /**
@@ -6,20 +8,39 @@ Page({
    */
   data: {
     searchShowed: false,
+    scrollerHeight: 0,
     searchVal: "",
-    homeInfo:{}
+    delivers: [],
+    vDelivers: [],
+    homeInfo: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (opt) {
+    var that = this
     opt && opt.name && wx.setNavigationBarTitle({
       title: opt.name,
     })
-    this.setData({ homeInfo: { home_id: 99, name: '张三的家', avatarUrl: '../../../images/avatar_computer.png', desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。' } })
+    srv.getHomeInfo(opt.id, function (hi) {
+      that.setData({ homeInfo: hi });
+    });
+
+    //获取家里的所有发布
+    srv.getDelivers({ homeId: opt.id }, function (delivers) {
+      that.setData({ delivers: delivers, vDelivers: delivers });
+    })
+    //设置界面宽度高度
+    wx.getSystemInfo({
+      success: function (res) {
+        that.setData({
+          scrollerHeight: res.windowHeight - 70
+        });
+      }
+    });
   },
-  searchTyping:function(e){
+  searchTyping: function (e) {
     this.setData({
       searchVal: e.detail.value
     });
@@ -39,5 +60,11 @@ Page({
     this.setData({
       searchVal: ""
     });
+  },
+  lower: function () {
+
+  },
+  upper: function () {
+
   }
 })
