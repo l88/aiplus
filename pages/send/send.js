@@ -10,6 +10,7 @@ var testData = {
 }
 var letterId=0
 var app=getApp();
+var srv = require("../../common/services");
 Page({
   data: {
     scrollerHeight: 0,
@@ -38,12 +39,6 @@ Page({
           scrollerHeight: res.windowHeight - 200
         });
       }
-    });
-  },
-  tabClick: function (e) {
-    this.setData({
-      sliderOffset: e.currentTarget.offsetLeft,
-      activeIndex: e.currentTarget.id
     });
   },
   searchTyping: function (e) {
@@ -91,10 +86,10 @@ Page({
     }
 
     items.forEach(function(v,i,a){
-      app.addDeliver({
-        id: 0, sender: app.globalData.userInfo.uid
+      srv.addDeliver({
+        id: 0, sender: app.globalData.userInfo.openId
         ,homeId:v.id,letterId:letterId
-        ,time:Date.now()
+        ,time:Date.now(),ctype:1
       });
     },this);
     wx.showToast({

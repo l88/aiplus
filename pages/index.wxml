@@ -1,0 +1,15 @@
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">爱家书</view>
+    <view class="page__desc">{{successInfo}}</view>
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <view wx:if="{{failInfo}}" class="weui-toptips weui-toptips_warn">
+      {{failInfo}}
+    </view>
+    <view wx:if="{{tryAuth}}" class="weui-cells">
+      <label>爱家书小程序需要您的用户信息授权</label>
+      <button  class="weui-btn" type="primary" bindtap="tapAuth">授权获取用户信息</button>
+    </view>
+  </view>
+</view>

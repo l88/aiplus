@@ -6,7 +6,7 @@
     </view>
     <view class="user-info flex-item">
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      <text class="edit">查看或编辑个人主页{{unionId}}</text>
+      <text class="edit">查看或编辑个人主页{{userInfo.openId}}</text>
     </view>
   </view>
 

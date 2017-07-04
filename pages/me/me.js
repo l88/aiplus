@@ -1,17 +1,7 @@
-//logs.js
-var util = require('../../utils/util.js')
 var app = getApp()
 Page({
   data: {
-    motto: 'Hello World',
-    unionId: 'unionId',
     userInfo: {}
-  },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: ''
-    })
   },
   onLoad: function () {
     var that = this

@@ -6,21 +6,15 @@
         <view class="weui-cell__bd">
           家名称
         </view>
-        <view class="weui-cell__ft">
+        <view class="weui-cell__ft weui-cell__ft_in-access">
           {{homePref.name}}
-        </view>
-      </navigator>
-      <navigator url="myNickName?id={{myPref.id}}&name=小五" class="weui-cell">
-        <view class="weui-cell__bd">我在家里的昵称</view>
-        <view class="weui-cell__ft">
-          {{myPref.nickName}}
         </view>
       </navigator>
       <navigator url="homeDesc?id={{homePref.id}}&name={{homePref.name}}&desc={{homePref.desc}}" class="weui-cell">
         <view class="weui-cell__bd">
           家公告
         </view>
-        <view class="weui-cell__ft">
+        <view class="weui-cell__ft weui-cell__ft_in-access">
           {{homePref.desc}}
         </view>
       </navigator>
@@ -43,6 +37,12 @@
     </view>
     <!-- cells1 -->
     <view class="weui-cells">
+      <navigator url="myNickName?id={{myPref.id}}&name=小五" class="weui-cell">
+        <view class="weui-cell__bd">我在家里的昵称</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">
+          {{myPref.nickName}}
+        </view>
+      </navigator>
       <view class="weui-cell weui-cell_switch">
         <view class="weui-cell__bd">消息免打扰</view>
         <view class="weui-cell__ft">

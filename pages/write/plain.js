@@ -17,7 +17,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (opts) {
-    myid = app.globalData.userInfo.uid
+    myid = app.globalData.userInfo.openId
     this.data.letter.owner = myid
     try {
       var vs = wx.getStorageSync('myLetters')
