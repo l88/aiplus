@@ -1,0 +1,6 @@
+<template name="tips">
+  <view class="tips-box">
+  <view class="tips-desc">
+  {{tip.desc}}</view>
+  </view>
+</template>

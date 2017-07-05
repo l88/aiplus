@@ -1,4 +1,7 @@
 <!--letters.wxml-->
+<import src="plainLetter.wxml" />
+<import src="tips.wxml" />
+
 <view class="page">
   <view class="page__bd">
     <view class="weui-search-bar">
@@ -17,30 +20,31 @@
       </view>
       <view class="weui-search-bar__cancel-btn" hidden="{{!searchShowed}}" bindtap="hideSearch">取消</view>
       <view class="weui-search-bar__cancel-btn" hidden="{{searchShowed}}">
-      <navigator url="../preferences/preferences?id={{homeInfo.home_id}}&name={{homeInfo.name}}">
-      设置</navigator>
+        <navigator url="../preferences/preferences?id={{homeInfo.home_id}}&name={{homeInfo.name}}">
+          设置</navigator>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{searchShowed}}">
+        <navigator url="../preferences/preferences?id={{homeInfo.home_id}}&name={{homeInfo.name}}">
+          决议</navigator>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{searchShowed}}">
+        <navigator url="../preferences/preferences?id={{homeInfo.home_id}}&name={{homeInfo.name}}">
+          申请</navigator>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{searchShowed}}">
+        <navigator url="../preferences/preferences?id={{homeInfo.home_id}}&name={{homeInfo.name}}">
+          书信</navigator>
       </view>
     </view>
     <!-- search bar -->
 
 
-    <scroll-view scroll-y="true" style="height: {{scrollerHeight}}px;" bindscrolltoupper="upper" bindscrolltolower="lower">
-      <view class="weui-cells weui-cells_after-title">
+    <scroll-view scroll-y="true" style="height: 530px;" bindscrolltoupper="upper" bindscrolltolower="lower">
         <block wx:for="{{vDelivers}}" wx:key="id">
-          <navigator url="deliver?id={{item.id}}&name={{item.name}}" class="weui-cell" >
-            <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
-              <image src="{{item.avatar}}" class="icon" style="width: 50px; height: 50px; display: block" />
-            </view>
-            <view class="weui-cell__bd">
-              <view class="weui-media-box__title">id={{item.id}},sender={{item.sender}},homeid={{item.homeId}},letterid={{item.letterId}}</view>
-              <view class="weui-media-box__desc">{{item.desc}}</view>
-            </view>
-            <view class="weui-cell__ft" style="width:20px;font-size: 12px;">
-              {{item.time}}
-            </view>
-          </navigator>
+          <template wx:if="{{item.dtype=='letter' && item.letter.ltype=='plain'}}" is="plain" data="{{...item}}" />
+          <template wx:if="{{item.dtype=='tips'}}" is="tips" data="{{tip:item.tip}}" />
+
         </block>
-      </view>
     </scroll-view>
   </view>
 </view>

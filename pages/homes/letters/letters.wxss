@@ -1,1 +1,58 @@
 /* pages/homes/letters/letters.wxss */
+
+.letter-info-box {
+  padding: 5px 15px;
+  position: relative;
+}
+
+.letter-info-box:before {
+  content: " ";
+  position: absolute;
+  left: 15px;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1rpx solid #e5e5e5;
+  color: #e5e5e5;
+}
+
+.tips-box{
+  display:block;
+  margin-top: 10px;
+  position: relative;
+  text-align: center;
+}
+.tips-box:first-child{
+  margin-top: 0px;
+}
+.tips-desc{
+  display: inline-block;
+  padding:1px 1em;
+  border-radius: 18px;
+  text-align: center;
+  font-size: 13px;
+  background-color: darkgray;
+}
+
+.weui-media-box {
+  padding: 5px 15px;
+}
+
+.weui-media-box__info {
+  margin-top: 1px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.weui-media-box__info__meta {
+  padding-right: 0.5em;
+}
+
+.weui-media-box__info__meta_extra {
+  padding-left: 0.5em;
+}

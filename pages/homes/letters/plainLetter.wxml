@@ -1,0 +1,23 @@
+<template name="plain">
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_text">
+        <view class="weui-media-box__title">{{letter.title}}</view>
+        <view class="weui-media-box__desc">{{letter.content}}</view>
+      </view>
+      <view class="letter-info-box">
+        <view class="weui-media-box__info">
+          <view class="weui-media-box__info__meta">{{sender.nickName}}</view>
+          <view style="-webkit-box-flex: 1;-webkit-flex: 1;flex:1" class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{dtime}}</view>
+          <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">原创：{{letter.owner.nickName}}</view>
+        </view>
+        <view class="weui-media-box__info">
+          <view class="weui-media-box__info__meta">赞{{votes.aye.persons}}/{{votes.aye.rightsNum}}/{{votes.aye.rights}}</view>
+          <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">踩{{votes.nay.persons}}/{{votes.nay.rightsNum}}/{{votes.nay.rights}}</view>
+          <view style="-webkit-box-flex: 1;-webkit-flex: 1;flex:1" class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{comments}}评论</view>
+          <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">关注</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

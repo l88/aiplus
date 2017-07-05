@@ -1,6 +1,7 @@
 // letters.js
 var app = getApp();
 var srv = require("../../../common/services.js");
+var util = require("../../../utils/util");
 Page({
 
   /**
@@ -28,7 +29,10 @@ Page({
     });
 
     //获取家里的所有发布
-    srv.getDelivers({ homeId: opt.id }, function (delivers) {
+    srv.loadHomeDelivers({ homeId: opt.id }, delivers => {
+      delivers.every(e => {
+        e.dtime=util.formatNowDiff(e.time);
+      return true;});
       that.setData({ delivers: delivers, vDelivers: delivers });
     })
     //设置界面宽度高度
