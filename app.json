@@ -22,7 +22,9 @@
     "pages/homes/preferences/admin/assignOwner",
     "pages/write/write",
     "pages/write/plain",
-    "pages/send/send"
+    "pages/send/send",
+    "pages/homes/letters/view/plain",
+    "pages/homes/letters/view/voteDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

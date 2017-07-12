@@ -37,7 +37,6 @@ Page({
       login: true,
       url: app.config.service.meUrl,
       success(res) {
-        console.log('getMeSuccess', res);
         app.globalData.userInfo = res.data;
         wx.switchTab({
           url: 'homes/homes'

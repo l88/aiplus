@@ -8,8 +8,8 @@ module.exports = {
     var minute = date.getMinutes()
     var second = date.getSeconds()
 
-
-    return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+    var that = this;
+    return [year, month, day].map(that.formatNumber).join('/') + ' ' + [hour, minute, second].map(that.formatNumber).join(':')
   },
   formatNumber(n) {
     n = n.toString()

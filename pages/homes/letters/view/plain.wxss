@@ -1,0 +1,7 @@
+/* plain.wxss */
+
+.article-info {
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 1em;
+}

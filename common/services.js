@@ -5,7 +5,6 @@ module.exports = {
     wx.getStorage({
       key: 'myHomes',
       success: function (res) {
-        console.log(res)
         typeof cb == "function" && cb(res.data);
       },
       fail: function (res) {
@@ -44,7 +43,6 @@ module.exports = {
   },
   getHomePref: function (hid, cb) {
     var hps = wx.getStorageSync("homePrefs");
-    console.log("hps=" + hps);
     if (!hps) hps = [];
     //TODO sync from host
     var hp = hps.find((a) => a.homeId == hid);
@@ -74,10 +72,10 @@ var defaultData = {
 }
 var testData = {
   hdelivers: [
-    { id: 0, homeId: 3, sender: { id: 99, nickName: '张三', relations: [{ id: 1, name: '东3101' }, { id: 2, name: '东2105' }] }, letterId: 99, time: 1499160092214, dtype: 'letter', letter: { id: 99, title: '测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1', content: '测试加油测试加油测试加油测试加油测试加油测试加油测试加油测试加油测试加油测试加油测试加油测试加油测试加油测试加油测试加油测试加油测试加油测试加油测试加油测试加油', ltype: 'plain', version: 1, mtime: 1499160087736, ownerId: 99, owner: { nickName: '李四' } }, votes: { aye: { persons: 5, rightsNum: 8, rights: 1097.5 }, nay: { persons: 2, rightsNum: 3, rights: 809 } }, comments:6 }
-    , { id: 4, homeId: 3, sender: { id: 99, nickName: '张三a', relations: [{ id: 1, name: '东3101a' }, { id: 2, name: '东2105a' }] }, letterId: 99, time: 1499160092214, dtype: 'letter', letter: { id: 99, title: '测试2a', content: '测试加油a', ltype: 'plain', version: 1, mtime: 1499160087736, ownerId: 99, owner: { nickName: '李四a' } }, votes: { aye: { persons: 5, rightsNum: 8, rights: 1097.5 }, nay: { persons: 2, rightsNum: 3, rights: 809 } }, comments: 6 }
-    , { id: 2, homeId: 3, letterId: 99, time: 1499160092214, dtype: 'tips', tip:{desc:'asdfsadddddddddddddddddd sdfsadf sfdaasdfasdf 12:30'}} 
-    , { id: 3, homeId: 3, sender: { id: 99, nickName: '张三b', relations: [{ id: 1, name: '东3101a' }, { id: 2, name: '东2105a' }] }, letterId: 99, time: 1499160092214, dtype: 'letter', letter: { id: 99, title: '测试2b', content: '测试加油b', ltype: 'plain', version: 1, mtime: 1499160087736, ownerId: 99, owner: { nickName: '李四a' } }, votes: { aye: { persons: 5, rightsNum: 8, rights: 1097.5 }, nay: { persons: 2, rightsNum: 3, rights: 809 } }, comments: 6 }]
+    { id: 0, homeId: 3, sender: { id: 99, nickName: '张三'}, letterId: 99, time: 1499160092214, dtype: 'letter', letter: { id: 99, title: '测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1', content: '测试加油测试加油测试加油测试加油测试加油测试加油测试加油测试加油测试加油测试加油测试加油测试加油测试加油测试加油测试加油测试加油测试加油测试加油测试加油测试加油', ltype: 'plain', version: 1, mtime: 1499160087736, ownerId: 99, owner: { nickName: '李四' } }, votes: { aye: { persons: 5, rightsNum: 8, rights: 1097.5 }, nay: { persons: 2, rightsNum: 3, rights: 809 } }, comments: 6 }
+    , { id: 4, homeId: 3, sender: { id: 99, nickName: '张三a'}, letterId: 99, time: 1499160092214, dtype: 'letter', letter: { id: 99, title: '测试2a', content: '测试加油a', ltype: 'plain', version: 1, mtime: 1499160087736, ownerId: 99, owner: { nickName: '李四a' } }, votes: { aye: { persons: 5, rightsNum: 8, rights: 1097.5 }, nay: { persons: 2, rightsNum: 3, rights: 809 } }, comments: 6 }
+    , { id: 2, homeId: 3,  time: 1499160092214, dtype: 'tips', tip: { desc: 'asdfsadddddddddddddddddd sdfsadf sfdaasdfasdf 12:30' } }
+    , { id: 3, homeId: 3, sender: { id: 99, nickName: '张三b'}, letterId: 99, time: 1499160092214, dtype: 'letter', letter: { id: 99, title: '测试2b', content: '测试加油b', ltype: 'plain', version: 1, mtime: 1499160087736, ownerId: 99, owner: { nickName: '李四a' } }, votes: { aye: { persons: 5, rightsNum: 8, rights: 1097.5 }, nay: { persons: 2, rightsNum: 3, rights: 809 } }, comments: 6 }]
   , homePref: { id: 99, homeId: 22, owner: 11, isPublic: false, isAcceptable: true, name: '张三的家', desc: '张三和王五的家', relationName: '房号', rightsName: '面积', rightsUnit: '平米', canMbApprove: false, minAcceptRights: 1, minApplys: 1, minApplyRights: 2, applyTips: '申请面积调整，需要提交和验证身份证及房产证明' }
   , myPref: { id: 99, personId: 11, homeId: 22, nickName: '小五', totalRights: 113.7, relations: [{ id: 11, name: '客人', rights: 0 }, { id: 22, name: 'S13A', rights: 113.7 }] }
   , myHomes: [

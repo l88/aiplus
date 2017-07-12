@@ -1,10 +1,11 @@
 <template name="plain">
   <view class="weui-panel weui-panel_access">
     <view class="weui-panel__bd">
-      <view class="weui-media-box weui-media-box_text">
+      <navigator class="weui-media-box weui-media-box_text"
+        url="view/plain?id={{id}}">
         <view class="weui-media-box__title">{{letter.title}}</view>
         <view class="weui-media-box__desc">{{letter.content}}</view>
-      </view>
+      </navigator>
       <view class="letter-info-box">
         <view class="weui-media-box__info">
           <view class="weui-media-box__info__meta">{{sender.nickName}}</view>
