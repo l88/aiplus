@@ -28,9 +28,10 @@
 .tips-desc{
   display: inline-block;
   padding:1px 1em;
-  border-radius: 18px;
+  border-radius: 8px;
   text-align: center;
   font-size: 13px;
+  color: #fff;
   background-color: darkgray;
 }
 

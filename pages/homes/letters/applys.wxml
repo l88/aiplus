@@ -23,8 +23,17 @@
         <navigator url="../preferences/preferences?id={{homeInfo.home_id}}&name={{homeInfo.name}}">
           设置</navigator>
       </view>
-      <view class="weui-search-bar__cancel-btn weui-cell__ft_in-access" hidden="{{searchShowed}}" bindtap="switchList">
-          {{switchName}}
+      <view class="weui-search-bar__cancel-btn" hidden="{{searchShowed}}">
+        <navigator url="../preferences/preferences?id={{homeInfo.home_id}}&name={{homeInfo.name}}">
+          决议</navigator>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{searchShowed}}">
+        <navigator url="applys?id={{homeInfo.home_id}}&name={{homeInfo.name}}">
+          申请</navigator>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{searchShowed}}">
+        <navigator url="letters?id={{homeInfo.home_id}}&name={{homeInfo.name}}">
+          书信</navigator>
       </view>
     </view>
     <!-- search bar -->

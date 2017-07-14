@@ -9,6 +9,7 @@ Page({
    */
   data: {
     searchShowed: false,
+    switchName:'书信',
     scrollerHeight: 0,
     searchVal: "",
     delivers: [],
@@ -70,5 +71,16 @@ Page({
   },
   upper: function () {
 
+  },
+  switchList(e){
+    var names = ['书信', '申请', '决议'];
+    var that = this;
+    wx.showActionSheet({
+      itemList: names,
+      success(res){
+        if(res.cancel) return;
+        that.setData({ switchName: names[res.tapIndex]})
+      }
+    })
   }
 })
