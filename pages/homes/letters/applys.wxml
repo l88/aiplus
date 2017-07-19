@@ -1,50 +1,24 @@
-<!--letters.wxml-->
-<import src="plainLetter.wxml" />
-<import src="tips.wxml" />
-
-<view class="page">
-  <view class="page__bd">
-    <view class="weui-search-bar">
-      <view class="weui-search-bar__form">
-        <view class="weui-search-bar__box">
-          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
-          <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{searchVal}}" focus="{{searchShowed}}" bindinput="searchTyping" />
-          <view class="weui-icon-clear" wx:if="{{searchVal.length > 0}}" bindtap="clearSearch">
-            <icon type="clear" size="14"></icon>
-          </view>
+<template name="applys">
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__bd">
+      <navigator class="weui-media-box weui-media-box_text"
+        url="view/plain?id={{id}}">
+        <view class="weui-media-box__title">{{letter.title}}</view>
+        <view class="weui-media-box__desc">{{letter.content}}</view>
+      </navigator>
+      <view class="letter-info-box">
+        <view class="weui-media-box__info">
+          <view class="weui-media-box__info__meta">{{sender.nickName}}</view>
+          <view style="-webkit-box-flex: 1;-webkit-flex: 1;flex:1" class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{dtime}}</view>
+          <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">原创：{{letter.owner.nickName}}</view>
         </view>
-        <label class="weui-search-bar__label" hidden="{{searchShowed}}" bindtap="showSearch">
-          <icon class="weui-icon-search" type="search" size="14"></icon>
-          <view class="weui-search-bar__text">搜索</view>
-        </label>
-      </view>
-      <view class="weui-search-bar__cancel-btn" hidden="{{!searchShowed}}" bindtap="hideSearch">取消</view>
-      <view class="weui-search-bar__cancel-btn" hidden="{{searchShowed}}">
-        <navigator url="../preferences/preferences?id={{homeInfo.home_id}}&name={{homeInfo.name}}">
-          设置</navigator>
-      </view>
-      <view class="weui-search-bar__cancel-btn" hidden="{{searchShowed}}">
-        <navigator url="../preferences/preferences?id={{homeInfo.home_id}}&name={{homeInfo.name}}">
-          决议</navigator>
-      </view>
-      <view class="weui-search-bar__cancel-btn" hidden="{{searchShowed}}">
-        <navigator url="applys?id={{homeInfo.home_id}}&name={{homeInfo.name}}">
-          申请</navigator>
-      </view>
-      <view class="weui-search-bar__cancel-btn" hidden="{{searchShowed}}">
-        <navigator url="letters?id={{homeInfo.home_id}}&name={{homeInfo.name}}">
-          书信</navigator>
+        <navigator class="weui-media-box__info" url="view/voteDetail?id={{id}}">
+          <view class="weui-media-box__info__meta">赞{{votes.aye.persons}}/{{votes.aye.rightsNum}}/{{votes.aye.rights}}</view>
+          <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">踩{{votes.nay.persons}}/{{votes.nay.rightsNum}}/{{votes.nay.rights}}</view>
+          <view style="-webkit-box-flex: 1;-webkit-flex: 1;flex:1" class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{comments}}评论</view>
+          <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">关注</view>
+        </navigator>
       </view>
     </view>
-    <!-- search bar -->
-
-
-    <scroll-view scroll-y="true" style="height: 530px;" bindscrolltoupper="upper" bindscrolltolower="lower">
-        <block wx:for="{{vDelivers}}" wx:key="id">
-          <template wx:if="{{item.dtype=='letter' && item.letter.ltype=='plain'}}" is="plain" data="{{...item}}" />
-          <template wx:if="{{item.dtype=='tips'}}" is="tips" data="{{tip:item.tip}}" />
-
-        </block>
-    </scroll-view>
   </view>
-</view>
+</template>

@@ -1,6 +1,7 @@
 <!--letters.wxml-->
 <import src="plainLetter.wxml" />
 <import src="tips.wxml" />
+<import src="applys.wxml" />
 
 <view class="page">
   <view class="page__bd">
@@ -33,6 +34,7 @@
     <scroll-view scroll-y="true" style="height: 530px;" bindscrolltoupper="upper" bindscrolltolower="lower">
         <block wx:for="{{vDelivers}}" wx:key="id">
           <template wx:if="{{item.dtype=='letter' && item.letter.ltype=='plain'}}" is="plain" data="{{...item}}" />
+          <template wx:if="{{item.dtype=='apply'}}" is="applys" data="{{...item}}" />
           <template wx:if="{{item.dtype=='tips'}}" is="tips" data="{{tip:item.tip}}" />
 
         </block>
